@@ -13,19 +13,27 @@ public class App
     {
         Persona objPersona1 = new Empleado("Byron", 20, 10546.32);
         Persona objPersona2 = new Cliente("JAvier", 30, "(032) 446 23 45");
+        Persona objPersona3 = new Empleado("fabian", 30, 1300.00);
         // polimorfismo: capacidad que tiene un metodo de comportarse de diferentes maneras segun el onjeto que lo llame . ej mostrar
 
         objPersona1.mostrar();
         objPersona2.mostrar();
+        objPersona3.mostrar();
 
         System.out.println(objPersona1);
         System.out.println(objPersona2);
+        System.out.println(objPersona3);
 
         // se crea el objeto de empresa para validar la relacion entre empresa y empleado
         //composicion ---> relacion fuerte  --> se hace atraves del atributo de la clase.
 
         Empresa objEmpresa = new Empresa("MisionTIC2022",(Empleado) objPersona1);
         System.out.println(objEmpresa);
+
+        // agregacion debil ---> relacion debil ---> se hace a traves de un parametro de la clase empresa.
+
+        System.out.println(objEmpresa.informacionCliente((Cliente)objPersona2));
+        
     }
-    
+
 }
